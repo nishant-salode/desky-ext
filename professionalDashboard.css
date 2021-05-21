@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+  
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+body{
+    background: url('./images/background/2.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+* {
+    padding: 0; margin: 0; 
+    font-family: Raleway;
+}
+
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%)); */
+
+  
+  overflow: hidden;
+}
+
+/*
+*Side Bar Css
+*/
+.side-bar-container{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  background-color: #000000a1;
+  color: white;
+}
+#addBookmark{
+  border: 2px solid black;
+  font-size: 20px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background: #f17e1c
+}
+
+#bookmark-link{
+  position: fixed;
+  left: 62px;
+  width: 650px;
+  border-radius: 22px;
+  padding: 0px;
+  width: 0px;
+  /* height: 0px; */
+  bottom: 7%;
+  transition: width 0.5s, padding 0.2s;
+}
+#bookmark-link:focus{
+  outline: 0;
+}
+.bookmark-link-arrow-left {
+  position: fixed;
+  bottom: 8%;
+  left: 52px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-right: 18px solid white;
+  opacity: 0;
+  transition: opacity 0.9s;
+}
+.booklink-container{
+   position: absolute;
+   bottom: 0;
+   align-items: center;
+   max-height: 600px;
+   /* overflow: auto; */
+}
+#side-bar-header{
+  text-decoration: overline;
+  font-style: italic;
+  text-shadow: 2px 2px 2px #0000009e;
+  font-size: 12px;
+  font-variant: small-caps;
+}
+.side-bar-icon{
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  /* border-radius: 15px; */
+  transition: width 0.3s,height 0.3s,border-radius 1.2s;
+}
+.side-bar-icon:hover,#addBookmark:focus {
+  width: 40px;
+  height: 40px;
+  border-radius: 35px;
+}
+.remove-bookmark-icon{
+  font-size: 14px !important;
+  color: #ff0000fc;
+  position: absolute;
+  display: none !important;
+  left: 74%;
+  top: 1%;
+}
+.single-bookmark-box:hover>.remove-bookmark-icon{
+  display: inline !important;
+}
+
+
+
+  /*
+  *
+  *Scroll bar CSS start
+  *
+  */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(255, 255, 255);
+    border-radius: 10px;
+    background: #ffffff;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(100, 193, 247, 0.62);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 193, 247, 0.795);
+    cursor: pointer;
+  }
+  /*
+  *
+  *Scroll bar css end
+  *
+  */
+
+  .fw-600{
+    font-weight: 600;
+  }
+  .fw-700{
+    font-weight: 700;
+  }
+  .footer-quote{
+    position: absolute;
+    bottom: 10px;
+    text-shadow: 1px 2px 2px #151515;
+    font-size: 25px;
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+#weather{
+  position: absolute;
+  top: 14px;
+}
+
+/* class="selectize-input items has-options full has-items     height: 0;
+    width: 0;
+    min-height: 0;
+    min-width: 0;
+    display: none; */
+
+    /* Covid 19 India Section*/
+
+   #covid19-table td, #covid19-table th {
+      padding: 0.3rem;
+      max-width: 120px;
+  }
+
+  #covid-19-tool:hover{
+    cursor: pointer;
+  }
+
+  #covid-19-container{
+    display: none;
+  }

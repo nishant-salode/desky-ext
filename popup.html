@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="./libraries/prebuild/jquery-3.5.1.min.js"></script>
+    <script src="./libraries/custom/popup.js"></script>
+    <style>
+        .input-fd{
+            width: 120px;
+            height: 36px;
+            font-size: 12px;
+            font-family: sans-serif;
+            line-height: 23px;
+            border-radius: 4px;
+            border: 1px solid grey;
+            padding-left: 7px;
+        }
+        .legend-label{
+            position: absolute;
+            background: white;
+            top: -8px;
+            font-size: x-small;
+            left: 22px;
+            font-weight: 800;
+        }
+        .hid{
+            /* transition: all 3s; */
+            display: none;
+        }
+    </style>
+    <!-- <script>
+      document.getElementById("settings").addEventListener("click", displaySettings());
+    function displaySettings(){
+       console.log('asd');
+   }
+    </script> -->
+</head>
+<body>
+ <div class="fluid p-0" style="border: 1px solid grey;
+ border-radius: 5px;">
+    <div class="row">
+        <div id="btn-capture" class="btn-group col col-xs-12">
+            <button name="home" class="btn btn-sm btn-light btn-block m-0" style="font-size: x-small;">
+                <img id="home" name="home" src="./images/desky-menucons/home.png" alt="Home" height="12px" width="12px" />
+            </button>  
+            <button name="settings" class="btn btn-sm btn-light btn-block m-0" style="font-size: x-small;">
+                <img id="settings" name="settings" src="./images/desky-menucons/cog.png" alt="Home" height="12px" width="12px" />
+            </button>
+            <!-- <button id="settings" class="btn btn-sm btn-light btn-block m-0" style="font-size: x-small;" >
+                <img src="./images/desky-menucons/home.png" alt="Home" height="12px" width="12px" />
+            </button> -->
+
+            
+        </div>
+    </div>
+     
+    <div id="detailForm" class="row p-2 hid" >
+        <div  class="col col-xs-5 mt-2 mb-1 hid">
+            <label class="legend-label hid" for="firstname">first name</label>
+            <input id="firstname" class="input-fd hid" type="text"/>
+        </div>
+        <div  class="col mt-2 col-xs-5 ml-4 hid" >
+            <button id="update-btn" class="btn btn-sm btn-info p-1 ml-2 hid">Update</button>
+        </div>
+        
+    </div>
+</div>
+     
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-Frame-Options" content="deny"> -->
+    <title>Dashboard Custom</title>
+    <link rel="stylesheet" href="./libraries//prebuild/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./professionalDashboard.css">
+    <link rel="stylesheet" href="./todoListStyle.css">
+    <link rel="stylesheet" href="./clockStyle.css">
+    <link rel="stylesheet" href="./libraries/prebuild/custom-dropdown-style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="libraries/prebuild/jquery-3.5.1.min.js"></script>
+    <script src="libraries/prebuild/moment.min.js"></script>
+    <script src="libraries/prebuild/moment-timezone.js"></script>
+    <script src="libraries/prebuild/custom-dropdown.js"></script>
+    <style>
+        #username{
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    </style>
+  </head>
+<body>
+<div class="fluid side-bar-container">
+    <div class="side-bar m-1">
+        <div class="vertical-nav" id="side-bar-header">ShortKuts</div>
+    </div>
+    <div class="booklink-container text-center w-100 mb-5">
+     
+        <!-- <div class="single-bookmark-box">
+            <a href="https://tools.iabtechlab.com">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?domain_url=tools.iabtechlab.com" alt="tools.iabtechlab.com">
+                
+            </a>
+            <i class="fa fa-minus-circle remove-bookmark-icon"></i>    
+        </div>
+        <div class="single-bookmark-box">
+            <a href="https://bot.iabtechlab.com">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?domain_url=bot.iabtechlab.com" alt="bot.iabtechlab.com">
+            </a>    
+            <i class="fa fa-minus-circle remove-bookmark-icon"></i>    
+        </div>
+        <div class="single-bookmark-box">
+            <a href="https://theiab.atlassian.net/secure/Dashboard.jspa">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?sz=64&domain_url=https://theiab.atlassian.net" alt="theiab.atlassian.net">
+            </a>    
+            <i class="fa fa-minus-circle remove-bookmark-icon"></i>    
+        </div>        
+        <div>
+            <a href="http://114.143.137.67/">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?sz=64&domain_url=http://114.143.137.67/" alt="AIT gitlab">
+            </a>    
+            <i class="fa fa-minus-circle remove-bookmark-icon"></i>    
+        </div>        
+        <div>
+            <a href="https://github.com/InteractiveAdvertisingBureau/Tools-Portal/">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?sz=64&domain_url=https://github.com/InteractiveAdvertisingBureau/Tools-Portal/" alt="Toolsportal github">
+            </a>    
+            <i class="fa fa-minus-circle remove-bookmark-icon"></i>    
+        </div>         -->
+        <div>
+            <!-- <a href="https://github.com/InteractiveAdvertisingBureau/Tools-Portal/">
+                <img class="side-bar-icon img-circle" src="https://www.google.com/s2/favicons?sz=64&domain_url=https://github.com/InteractiveAdvertisingBureau/Tools-Portal/" alt="Toolsportal github">
+            </a>     -->
+
+<img width="64px" class="side-bar-icon img-circle" id="covid-19-tool" src="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg" alt="">
+
+        </div> 
+           <div>
+            <div id="arrow-left" class="bookmark-link-arrow-left"></div> 
+            <div class="input-group">
+                <input id="bookmark-link" type="text" placeholder="https://google.com/.." ></input> 
+            </div>
+            
+            <button id="addBookmark" addBookmark
+                 class="btn fa fa-plus side-bar-icon">
+            </button>
+        </div>
+
+        <!-- <img src="https://s2.googleusercontent.com/s2/favicons?domain=https://tools.iabtechlab.com/" alt="https://www.tools.iabtechlab.com/"> -->
+
+    </div>
+</div>
+    <div class="container-fluid">
+
+    <div class="row">
+        
+        <div class="text-light" style="font-size: 34px;
+        opacity: 0.95;
+        font-weight: 700;
+        position: absolute;
+        top: 20px;
+        left: 20%;">Hi, <span id="username"></span>
+        </div>
+        
+    </div>
+
+    <div class="row text-light">
+        <span class="digital-background">
+            <div class="col-md text-center text-light">
+                    <div id="datetimeHr" class="datetime"></div>
+                    <div class="blink datetime" >:</div>
+                    <div id="datetimeMin" class="datetime"></div>
+                    <div id="datetimeAmPm" class="datetimeAmPm"></div>
+                </div>
+        </span>
+        <span id="legend-IST-before" class="legend"></span>
+        <span id="legend-IST-after" class="legend"></span>
+    </div>
+    <div class="row text-light">
+        <span class="digital-background-EST">
+            <div class="col-md text-center text-light">
+                    <div id="EST_datetimeHr" class="datetime"></div>
+                    <div class="blink datetime" >:</div>
+                    <div id="EST_datetimeMin" class="datetime"></div>
+                    <div id="EST_datetimeAmPm" class="datetimeAmPm"></div>
+                </div>
+        </span>
+        <span id="legend-EST-before" class="legend"></span>
+        <span id="legend-EST-after" class="legend"></span>
+    </div>
+    <!-- <div class="row text-light">
+        <div class="digital-background" style=" background-color: #242424d1;
+        position: absolute;
+        top: 38%;
+        left: 45%;
+        border: 2px solid grey;
+        border-radius: 25px;">
+
+            <div>GST</div>
+    </div>
+        hi
+    </div> -->
+    <div class="row">
+        <div class="col-md"></div>
+        <div class="col-md-3" style="position: absolute;top: 30%;right: 1%;">
+            <div id="myDIV2" class="header">
+                <h3 style="margin-bottom:5px">My New To Do List</h3>
+                <input type="text" id="myInput2" placeholder="Add Items..">
+                <span id="addNewElement2" class="addBtn">Add</span>
+            </div>
+            <ul id="myUL2">
+                
+                <!-- <li class="checked">Pay bills</li> -->
+                
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md"></div>
+        <div class="col-md-3" style="position: absolute;top: 36%;right: 1%;">
+            <div id="myDIV" class="header">
+                <h3 style="margin-bottom:5px">My To Do List</h3>
+                <input type="text" id="myInput" placeholder="Add Items..">
+                <span id="addNewElement" class="addBtn">Add</span>
+            </div>
+            <ul id="myUL">
+                
+                
+                
+            </ul>
+        </div>
+    </div> -->
+    
+</div>  
+
+<div class="container-fluid" >
+    <!-- <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-light text-right">
+            <button>
+
+            </button>
+            </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="position: absolute;
+        top: 50%;
+        left: 4%;">
+            <!-- <iframe src="https://bot.iabtechlab.com/iabadmin/licenses" width="100%" height="300px" frameborder="0"></iframe> -->
+        </div>
+        <div class="col-md-2"></div>
+    </div>  
+</div>  
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 ml-5 mr-5 text-center text-light fw-600 footer-quote">“
+            <span id="quoteOfDay">A goal should scare you a little, and excite you a lot.</span>
+            ”</div>
+    </div>    
+</div>
+<div class="clock" id="clock" style="height: 0;">
+    <div class="hand hour" data-hour-hand></div>
+    <div class="hand minute" data-minute-hand></div>
+    <div class="hand second" data-second-hand></div>
+    <div class="number number1">1</div>
+    <div class="number number2">2</div>
+    <div class="number number3">3</div>
+    <div class="number number4">4</div>
+    <div class="number number5">5</div>
+    <div class="number number6">6</div>
+    <div class="number number7">7</div>
+    <div class="number number8">8</div>
+    <div class="number number9">9</div>
+    <div class="number number10">10</div>
+    <div class="number number11">11</div>
+    <div class="number number12">12</div>
+  </div>
+  <div id="covid-19-container" class="covid-19" style="    position: absolute;
+  top: 25%;
+  left: 5%;
+  overflow-y: auto;
+  max-height: 420px;
+  font-size: 10px;">
+      <table class="table table-striped table-dark table-hover " id="covid19-table">
+          <thead>
+            <th>State</th>
+            <th>Active</th>
+            <th>Confirmed</th>
+            <th>Deceased</th>
+            <th>Recovered</th>
+          </thead>
+          <tbody id="covid-19">
+
+          </tbody>
+      </table>
+  </div>
+   <span id="weather"></span>
+   <i class="fa fa-cog" style="position: absolute;
+   bottom: 10px;
+   right: 10px;
+   color: white;
+   font-size: 16px;"></i>
+   <div class="bottom-right-settings">
+    <select id="time-zone-list" class="time-zone">
+        <option value="0" disabled>Select</option>
+    </select>
+     <button id="time-zone-select-btn" class="btn btn-sm btn-warning" >Apply</button>
+   </div>
+<!-- <i class="fa fa-edit"></i> -->
+<script src="./libraries/custom/professionalDashboard.js"></script>
+</body>
+</html>
