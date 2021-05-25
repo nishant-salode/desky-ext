@@ -1,6 +1,29 @@
+// setTimeout(() => {
+//   for (i = 0; i < 204; i++)
+//   {
+//       setTimeout(function() {
+//         $(".number").css("text-shadow", + i +"px 1px 1px #000000ba");  
+//         //1px ​1px 4px blu
+//       }, i*50);
+//   }  
+// }, 3000);
+
+
 document.getElementById("username").innerHTML = localStorage.getItem("firstname");
 localStorage.setItem("quoteOfDay","Efforts Today, Fruits Tomorrow");
 document.getElementById("quoteOfDay").innerHTML = localStorage.getItem("quoteOfDay");
+if(!!!localStorage.getItem("firstname")){
+  var userName = prompt("Please enter your name", "");
+
+if (userName != null) {
+  localStorage.setItem("firstname", userName)
+  document.getElementById("username").innerHTML = localStorage.getItem("firstname");
+  }
+}
+if(!!!localStorage.getItem("alternate-time-zone")){
+  localStorage.setItem("alternate-time-zone",Intl.DateTimeFormat().resolvedOptions().timeZone);
+}
+
 
 // moment(new Date(),"MM-DD-YYYY");
 // document.getElementById("username").innerHTML=(moment.utc(new Date()).local().format("hh:mm"));
@@ -270,14 +293,34 @@ todo_List_DOM.innerHTML="";
 // fetchCompleteList()
 //Get Correct time per second
 function updateClock() {
-    let now = new Date(); // current date
+    let now = new Date(); // current date as per browser timezone (user timezone)
     
     
         timeHr = now.getHours() == 0? 12:now.getHours() < 10? "0"+now.getHours():now.getHours() ; 
         timeMin = (now.getMinutes() < 10)?  "0"+now.getMinutes() : now.getMinutes();
         timeAmPm = (now.getHours() <= 12)?"AM":"PM";
-        // timeHr == 0? timeHr = 12: timeHr;
-        // let IST_Timezone = "Asia/Kolkata";
+        
+        //1208AM
+        /* *
+         * Set wallpaper as per time
+         * 4am - 8pm Light BG wallpaper
+			   * 8pm - 4am Dark BG wallpaper
+         * */
+        let tag_BODY = document.getElementsByTagName("BODY")[0];
+                
+        if(timeHr >= 4 && timeHr <= 12 && timeAmPm === "AM" || timeHr >= 1 && timeHr <= 7 && timeAmPm === "PM"){
+          //Morning time
+          tag_BODY.style.background="url('./images/background/3.jpg')";
+        }
+        else{
+          //Dark times
+          tag_BODY.style.background="url('./images/background/2.jpg')";
+        }
+         tag_BODY.style.backgroundRepeat ="no-repeat";
+         tag_BODY.style.backgroundSize="cover";
+         tag_BODY.style.backgroundPosition="center";
+        //  background: url('./images/background/2.jpg');
+
     let default_DatetimeFormat_hour= "hh";
     let default_DatetimeFormat_minutes= "mm";
     let default_DatetimeFormat_AmPm= "A";
@@ -415,7 +458,7 @@ setClock();
 
 /*
  *
- *Code to fetch fevicon of a website 
+ *Code to fetch favicon of a website 
  * 
  */
 // addNewBookmark()
@@ -538,7 +581,14 @@ applyTimeZoneBtn.addEventListener('click', function(event) {
     _alert("Alternate Timezone set to - default (EDT/EST)");
   }
   else{
-    _alert("Alternate Timezone set to - "+localStorage.getItem("alternate-time-zone"));
+    // _alert("Alternate Timezone set to - "+localStorage.getItem("alternate-time-zone"));
+    VanillaToasts.create({
+      // title: "Alternate Timezone set to",
+      text: "Alternate Timezone set to \n" + localStorage.getItem("alternate-time-zone"),
+      type: "success",
+      // icon: "https://s0.2mdn.net/5406241/BRAND-4132_BAU-Confluence-6_Banner-Ads_728x90.jpg",
+      timeout: 2200
+    });
   }
   
 // alert();
